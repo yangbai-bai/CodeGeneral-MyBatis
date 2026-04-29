@@ -5,7 +5,8 @@ public enum CorrespondEnum {
     GlobalVo("/entity/vo/GlobalVo.java", "globalVo.java.ftl"),
     Global_Exception("/exception/GlobalException.java",  "exception.java.ftl"),
     Global_Exception_Handler("/exception/GlobalExceptionHandler.java", "globalExceptionHandler.java.ftl"),
-    Response_Enums("/entity/enums/ResponseEnums.java", "responseEnums.java.ftl");
+    Response_Enums("/entity/enums/ResponseEnums.java", "responseEnums.java.ftl"),
+    Redis_Config("/redis/RedisConfig.java", "redisConfig.java.ftl");
 
 
     CorrespondEnum(String filePath, String fileName) {

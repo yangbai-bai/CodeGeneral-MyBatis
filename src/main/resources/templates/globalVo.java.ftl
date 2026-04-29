@@ -1,7 +1,7 @@
 package ${pkg}.entity.vo;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.yangbaibai.${pkg}.entity.enums.ResponseEnums;
+import ${pkg}.entity.enums.ResponseEnums;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

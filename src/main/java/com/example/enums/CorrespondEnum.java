@@ -1,7 +1,5 @@
 package com.example.enums;
 
-import com.example.CodeGenerator;
-
 /**
  * 文件映射枚举类
  * <p>
@@ -28,7 +26,7 @@ public enum CorrespondEnum {
     /** 初始化运行类 */
     Init_Run("/InitRun.java", "java_single/InitRun.java.ftl", ">>> Init_Run 已完成"),
     /** 应用启动类 */
-    ApplicationGenerator("/" + CodeGenerator.applicationName + "Application.java", "java_single/application.java.ftl", ">>> Application.java 已完成");
+    ApplicationGenerator("/OrderSystemApplication.java", "java_single/application.java.ftl", ">>> Application.java 已完成");
 
 
     /** 文件路径 */

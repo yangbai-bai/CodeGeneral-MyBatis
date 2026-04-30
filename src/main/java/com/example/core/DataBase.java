@@ -1,4 +1,4 @@
-package com.example.database;
+package com.example.core;
 
 import com.example.constant.GlobalPrintConstants;
 

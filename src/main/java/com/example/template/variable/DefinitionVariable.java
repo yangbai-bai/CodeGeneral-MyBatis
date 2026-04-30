@@ -27,14 +27,6 @@ public class DefinitionVariable {
         data.put("module", moduleName);                   // com.example
         data.put("applicationName", applicationName);
         data.put("className", moduleName.substring(0, 1).toUpperCase() + moduleName.substring(1) + "Application");
-        data.put("globalVo", changePathToClassPath(CorrespondEnum.GlobalVo.getFilePath()));
-        data.put("globalException", changePathToClassPath(CorrespondEnum.Global_Exception.getFilePath()));
-        data.put("globalExceptionHandler", changePathToClassPath(CorrespondEnum.Global_Exception_Handler.getFilePath()));
-        System.out.println(GlobalPrintConstants.VARIABLE);
         return data;
-    }
-
-    private static String changePathToClassPath(String filePath) {
-        return filePath.split("\\.")[0].replace("/", ".").substring(1);
     }
 }

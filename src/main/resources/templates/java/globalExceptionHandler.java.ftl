@@ -1,7 +1,6 @@
 package ${pkg}.exception;
 
 import ${pkg}.${globalVo};
-import ${pkg}.${globalException};
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 

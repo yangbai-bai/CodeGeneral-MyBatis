@@ -94,10 +94,10 @@ public class CodeGeneratorOperation {
                         .enableRestStyle()
                 )
                 .templateConfig(builder -> builder
-                        .mapper("/templates/mapper.java")
-                        .xml("/templates/mapper.xml")
-                        .service("/templates/service.java")
-                        .serviceImpl("/templates/serviceImpl.java")
+                        .mapper("/templates/mybatis/mapper.java")
+                        .xml("/templates/mybatis/mapper.xml")
+                        .service("/templates/mybatis/service.java")
+                        .serviceImpl("/templates/mybatis/serviceImpl.java")
                 )
                 .templateEngine(new FreemarkerTemplateEngine())
                 .execute();

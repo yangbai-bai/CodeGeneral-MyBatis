@@ -12,21 +12,21 @@ package com.example.enums;
  */
 public enum CorrespondEnum {
     /** 通用 VO 文件 */
-    GlobalVo("/entity/vo/GlobalVo.java", "java_single/globalVo.java.ftl", ">>> 通用VO文件已生成"),
+    GlobalVo("/entity/vo/GlobalVo.java", "common/globalVo.java.ftl", ">>> 通用VO文件已生成"),
     /** 全局异常类 */
-    Global_Exception("/exception/GlobalException.java", "java_single/exception/exception.java.ftl", ">>> GlobalException 已生成"),
+    Global_Exception("/exception/GlobalException.java", "common/exception/exception.java.ftl", ">>> GlobalException 已生成"),
     /** 全局异常处理器 */
-    Global_Exception_Handler("/exception/GlobalExceptionHandler.java", "java_single/exception/globalExceptionHandler.java.ftl", ">>> GlobalExceptionHandler 已生成"),
+    Global_Exception_Handler("/exception/GlobalExceptionHandler.java", "common/exception/globalExceptionHandler.java.ftl", ">>> GlobalExceptionHandler 已生成"),
     /** 通用响应枚举类 */
-    Response_Enums("/entity/enums/ResponseEnums.java", "java_single/responseEnums.java.ftl", ">>> 通用响应式枚举文件已生成"),
+    Response_Enums("/entity/enums/ResponseEnums.java", "common/responseEnums.java.ftl", ">>> 通用响应式枚举文件已生成"),
     /** Redis 配置类 */
-    Redis_Config("/redis/RedisConfig.java", "java_single/redis/redisConfig.java.ftl", ">>> Redis_Config 已生成"),
+    Redis_Config("/redis/RedisConfig.java", "common/redis/redisConfig.java.ftl", ">>> Redis_Config 已生成"),
     /** Redis 服务类 */
-    Redis_Service("/redis/RedisService.java", "java_single/redis/redisService.java.ftl", ">>> Redis_Service 已生成"),
+    Redis_Service("/redis/RedisService.java", "common/redis/redisService.java.ftl", ">>> Redis_Service 已生成"),
     /** 初始化运行类 */
-    Init_Run("/InitRun.java", "java_single/InitRun.java.ftl", ">>> Init_Run 已生成"),
+    Init_Run("/InitRun.java", "common/InitRun.java.ftl", ">>> Init_Run 已生成"),
     /** 应用启动类 */
-    ApplicationGenerator("/OrderSystemApplication.java", "java_single/application.java.ftl", ">>> Application.java 已生成");
+    ApplicationGenerator("/OrderSystemApplication.java", "common/application.java.ftl", ">>> Application.java 已生成");
 
 
     /** 文件路径 */

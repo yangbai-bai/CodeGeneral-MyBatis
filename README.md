@@ -88,7 +88,7 @@ mvn compile exec:java -Dexec.mainClass="com.example.runner.CodeGenerator"
 | outDir | ✅ | 代码输出目录 | `F:/projects/myapp` |
 | basePackage | ✅ | 基础包名 | `com.example` |
 | moduleName | ✅ | 模块名称 | `user` |
-| author | ✅ | 作者名称（默认 Unknown） | `BaiJinBo` |
+| author | ❌ | 作者名称（默认 Unknown） | `ZhangSan` |
 | applicationName | ❌ | 应用名称（默认等于 moduleName） | `UserSystem` |
 
 ## 生成内容
@@ -135,26 +135,27 @@ mvn compile exec:java -Dexec.mainClass="com.example.runner.CodeGenerator"
 
 ## 模板自定义
 
-模板文件位于 `src/main/resources/templates/` 目录：
+模板文件位于 `src/main/resources/templates/` 目录，按功能分为两个子目录：
 
 ```
 templates/
-├── entity.java.ftl          # 实体类模板
-├── mapper.java.ftl          # Mapper 接口模板
-├── mapper.xml.ftl          # Mapper XML 模板
-├── service.java.ftl        # Service 接口模板
-├── serviceImpl.java.ftl    # ServiceImpl 实现模板
-└── java_single/            # 额外生成文件
-    ├── application.java.ftl
-    ├── globalVo.java.ftl
-    ├── responseEnums.java.ftl
-    ├── InitRun.java.ftl
-    ├── redis/
-    │   ├── redisConfig.java.ftl
-    │   └── redisService.java.ftl
-    └── exception/
-        ├── exception.java.ftl
-        └── globalExceptionHandler.java.ftl
+├── mybatis/                    # MyBatis 代码生成模板
+│   ├── entity.java.ftl          # 实体类模板
+│   ├── mapper.java.ftl          # Mapper 接口模板
+│   ├── mapper.xml.ftl           # Mapper XML 模板
+│   ├── service.java.ftl         # Service 接口模板
+│   └── serviceImpl.java.ftl     # ServiceImpl 实现模板
+└── common/                     # 公共类模板
+    ├── application.java.ftl     # Spring Boot 启动类模板
+    ├── globalVo.java.ftl       # 统一响应封装模板
+    ├── responseEnums.java.ftl  # 响应状态枚举模板
+    ├── InitRun.java.ftl        # 初始化运行类模板
+    ├── exception/
+    │   ├── exception.java.ftl              # 自定义异常模板
+    │   └── globalExceptionHandler.java.ftl # 全局异常处理模板
+    └── redis/
+        ├── redisConfig.java.ftl   # Redis 配置模板
+        └── redisService.java.ftl  # Redis 服务模板
 ```
 
 如需自定义模板，直接修改对应 `.ftl` 文件即可。

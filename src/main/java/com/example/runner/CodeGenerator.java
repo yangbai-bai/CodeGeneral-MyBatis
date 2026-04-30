@@ -25,14 +25,14 @@ public class CodeGenerator {
      */
     public static void main(String[] args) throws Exception {
         GeneratorConfig config = new GeneratorConfig.Builder()
-                .jdbcUrl("jdbc:mysql://localhost:3306/order_system")
+                .jdbcUrl("jdbc:mysql://localhost:3306/example")
                 .username("root")
-                .password("Bai159357")
-                .outDir("F:/WorkSpace/JavaProjects/CodeGeneration/OrderSystem")
-                .basePackage("com.yangbaibai")
-                .moduleName("ordersystem")
-                .author("BaiJinBo")
-                .applicationName("OrderSystem")
+                .password("123456")
+                .outDir("D:/")
+                .basePackage("com.example")
+                .moduleName("example")
+                .author("Unknown")
+                .applicationName("example")
                 .build();
 
         CodeGeneratorOperation generator = new CodeGeneratorOperation(config);

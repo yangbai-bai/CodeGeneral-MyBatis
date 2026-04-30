@@ -2,7 +2,6 @@ package com.example.utils;
 
 import com.example.CodeGenerator;
 import com.example.enums.CorrespondEnum;
-import com.example.template.variable.DefinitionVariable;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 
@@ -33,10 +32,6 @@ public class GeneralUtils {
         if (!file.getFinishLog().isEmpty()) {
             System.out.println(file.getFinishLog());
         }
-    }
-
-    private static String changePathToClassPath(String filePath) {
-        return filePath.split("\\.")[0].replace("/", ".").substring(1);
     }
 
     /**

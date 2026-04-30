@@ -1,8 +1,5 @@
 package com.example.template.variable;
 
-import com.example.constant.GlobalPrintConstants;
-import com.example.enums.CorrespondEnum;
-
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;

@@ -7,7 +7,6 @@ import com.example.constant.GlobalPrintConstants;
 import com.example.database.DataBase;
 import com.example.enums.CorrespondEnum;
 import com.example.utils.GeneralUtils;
-import freemarker.template.Configuration;
 import com.example.template.variable.DefinitionVariable;
 import com.example.CodeGenerator;
 import java.util.Collections;
@@ -24,7 +23,7 @@ public record CodeGeneratorOperation(String applicationName, String author, Stri
         // ====== 连接数据库，获取所有的数据库表名 ======
         List<String> tableNames = DataBase.getAllTableNames(jdbcUrl, username, password);
         // 生成基础类
-        create(jdbcUrl, username, password, author, outDir, basePackage, moduleName, tableNames, CodeGenerator.baseFilePath);
+        create(jdbcUrl, username, password, author, outDir, basePackage, moduleName, tableNames);
         // 下放模板变量
         CorrespondEnum[] enums = CorrespondEnum.values();
         Map<String, Object> data = DefinitionVariable.templateVariable(CodeGenerator.author, CodeGenerator.applicationName, CodeGenerator.moduleName, CodeGenerator.basePackage);
@@ -39,6 +38,7 @@ public record CodeGeneratorOperation(String applicationName, String author, Stri
         System.out.println(GlobalPrintConstants.FINALLY + outDir.replace("/", "\\"));
     }
 
+    // 控制模板变量
     private static String changeTemplateName(String fileName) {
         // 1. 取路径最后一段（文件名部分）
         return fileName.substring(fileName.lastIndexOf('/') + 1).split("\\.")[0];
@@ -49,7 +49,7 @@ public record CodeGeneratorOperation(String applicationName, String author, Stri
         return filePath.split("\\.")[0].replace("/", ".").substring(1);
     }
 
-    private void create(String jdbcUrl, String username, String password, String author, String outDir, String basePackage, String moduleName, List<String> tableNames, String baseFilePath) {
+    private void create(String jdbcUrl, String username, String password, String author, String outDir, String basePackage, String moduleName, List<String> tableNames) {
         FastAutoGenerator.create(jdbcUrl, username, password)
                 .globalConfig(builder -> builder.author(author)
                         .outputDir(outDir + "/src/main/java")

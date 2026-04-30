@@ -108,14 +108,14 @@ public class GeneratorConfig {
      * Builder 静态内部类
      */
     public static class Builder {
-        private String jdbcUrl = "jdbc:mysql://localhost:3306/order_system";
-        private String username = "root";
-        private String password = "Bai159357";
-        private String outDir = "F:/WorkSpace/JavaProjects/CodeGeneration/OrderSystem";
-        private String basePackage = "com.yangbaibai";
-        private String moduleName = "ordersystem";
-        private String author = "BaiJinBo";
-        private String applicationName = "OrderSystem";
+        private String jdbcUrl;
+        private String username;
+        private String password;
+        private String outDir;
+        private String basePackage;
+        private String moduleName;
+        private String author;
+        private String applicationName;
 
         public Builder jdbcUrl(String jdbcUrl) {
             this.jdbcUrl = jdbcUrl;
@@ -158,6 +158,30 @@ public class GeneratorConfig {
         }
 
         public GeneratorConfig build() {
+            if (jdbcUrl == null || jdbcUrl.isEmpty()) {
+                throw new IllegalStateException("jdbcUrl 不能为空");
+            }
+            if (username == null || username.isEmpty()) {
+                throw new IllegalStateException("username 不能为空");
+            }
+            if (password == null) {
+                throw new IllegalStateException("password 不能为空");
+            }
+            if (outDir == null || outDir.isEmpty()) {
+                throw new IllegalStateException("outDir 不能为空");
+            }
+            if (basePackage == null || basePackage.isEmpty()) {
+                throw new IllegalStateException("basePackage 不能为空");
+            }
+            if (moduleName == null || moduleName.isEmpty()) {
+                throw new IllegalStateException("moduleName 不能为空");
+            }
+            if (author == null || author.isEmpty()) {
+                this.author = "Unknown";
+            }
+            if (applicationName == null || applicationName.isEmpty()) {
+                this.applicationName = moduleName;
+            }
             return new GeneratorConfig(this);
         }
     }
